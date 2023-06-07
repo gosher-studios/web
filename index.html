@@ -4,12 +4,24 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 		<link rel="stylesheet" href="index.css" />
 	</head>
-	<body class="flex h-screen flex-col items-center justify-center bg-white font-real font-bold leading-none text-black dark:bg-black dark:text-white cursor-none">
-		<h1 class="text-[12em] flex items-center">:<span class="pt-9">3</span></h1>
-  	<div class="flex space-x-4 text-4xl underline">
+	<body class="flex h-screen flex-col items-center justify-center bg-white font-real font-bold leading-none text-black dark:bg-black dark:text-white cursor-none overflow-hidden">
+		<h1 class="text-[12em] flex items-center select-none">:<span class="pt-9">3</span></h1>
+  	<div class="flex space-x-4 text-4xl select-none">
 			<a href="http://files.colon3.lol" target="_blank" class="cursor-none transition-transform hover:scale-110">Files</a>
 			<a href="https://github.com/gosher-studios" target="_blank" class="cursor-none transition-transform hover:scale-110">Github</a>
 		</div>
+		<button id="tos" class="absolute right-5 bottom-5 cursor-none transition-transform hover:scale-110 text-black">TOS </button>
+		<dialog id="dialog" class="h-256 w-256 text-xl border-black cursor-none">
+			<div class="px-2 text-3xl">all of colon3.lol TOS</div>
+			<ul class="list-disc px-4">
+				<li> do not host illegal content pwease </li>
+				<li> we don't collect any data yet </li>
+				<li> on floppa files we technically can access the files but we DO NOT care </li>
+				<li> if you wish to report illegal content email abuse@colon3.lol <li>
+			</ul>
+			<button id="close">CLOSE</button>
+		
+		</dialog>
 		<div class="absolute w-[64px] h-[64px] rounded-full bg-white mix-blend-difference pointer-events-none" id="circle"></div>
 		<script>
 			let circle = document.getElementById("circle")
@@ -17,6 +29,17 @@
 				circle.style.left = e.pageX - 32 + "px";
 				circle.style.top = e.pageY - 32 + "px";
 			});
+			let tos = document.getElementById("tos");
+			let dialog = document.getElementById("dialog");
+			let close = document.getElementById("close");
+			tos.addEventListener('click',() => {
+				dialog.showModal();
+			})
+
+			close.addEventListener('click',(e) => {
+							e.preventDefault();
+							dialog.close();
+						})
 		</script>
 	</body>
 </html>
