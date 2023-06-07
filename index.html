@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<link rel="stylesheet" href="index.css" />
+	</head>
+	<body class="flex h-screen flex-col items-center justify-center bg-white font-real font-bold leading-none text-black dark:bg-black dark:text-white cursor-none">
+		<h1 class="text-[12em] flex items-center">:<span class="pt-9">3</span></h1>
+  	<div class="flex space-x-4 text-4xl underline">
+			<a href="http://files.colon3.lol" target="_blank" class="cursor-none transition-transform hover:scale-110">Files</a>
+			<a href="https://github.com/gosher-studios" target="_blank" class="cursor-none transition-transform hover:scale-110">Github</a>
+		</div>
+		<div class="absolute w-[64px] h-[64px] rounded-full bg-white mix-blend-difference pointer-events-none" id="circle"></div>
+		<script>
+			let circle = document.getElementById("circle")
+			document.addEventListener("mousemove", (e) => {
+				circle.style.left = e.pageX - 32 + "px";
+				circle.style.top = e.pageY - 32 + "px";
+			});
+		</script>
+	</body>
+</html>

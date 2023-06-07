@@ -1,0 +1,11 @@
+{
+  "name": "colon3",
+  "version": "1.0.0",
+  "scripts": {
+    "dev": "serve & tailwindcss -o index.css -w"
+  },
+  "dependencies": {
+    "serve": "^14.0.1",
+    "tailwindcss": "^3.1.8"
+  }
+}
